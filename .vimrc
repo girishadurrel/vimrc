@@ -1,6 +1,5 @@
 "-------------------------------------------------------
 " .vimrc file
-" last updated 31-08-2014
 " Author: Girisha Durrel De Silva <girisha@girisha.net>
 " Description: a newbie trying out his first .vimrc file
 "-------------------------------------------------------
@@ -11,7 +10,7 @@
 "-------------------------------------------------------
 
 "
-" as of 31-08-2014, the plugins that are executed:
+" set of pluggins used currently
 "
 " NERDTree [https://github.com/scrooloose/nerdtree]
 " EasyMotion [https://github.com/Lokaltog/vim-easymotion]
