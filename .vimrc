@@ -18,6 +18,7 @@
 " NERDCommenter [https://github.com/scrooloose/nerdcommenter]
 " Syntatic [https://github.com/scrooloose/syntastic]
 " CtrlP [https://github.com/kien/ctrlp.vim]
+" indentLine [https://github.com/Yggdroot/indentLine]
 "
 execute pathogen#infect()
 
