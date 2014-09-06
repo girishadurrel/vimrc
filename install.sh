@@ -73,6 +73,8 @@ echo ""
 
 echo -e "\t * installing a pathegon, plugging manager for vim... "
 
+# copy pasted from the pathogen github page [https://github.com/tpope/vim-pathogen]
+
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim &> /dev/null
 
