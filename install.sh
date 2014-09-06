@@ -3,7 +3,7 @@
 echo "" 
 
 echo "#-----------------------------------------------------------------------"
-echo "# [installation] .vimrc and pluggings for girishadurrel's vimrc [BEGIN] "
+echo "# [installation] .vimrc and plugins for girishadurrel's vimrc [BEGIN] "
 echo "#-----------------------------------------------------------------------"
 
 echo "" 
@@ -68,10 +68,10 @@ cp .vimrc ~/
 echo ""
 
 #----------------------------
-# installing pathegon pluggin
+# installing pathegon plugin
 #----------------------------
 
-echo -e "\t * installing a pathegon, plugging manager for vim... "
+echo -e "\t * installing a pathegon, plugin manager for vim... "
 
 # copy pasted from the pathogen github page [https://github.com/tpope/vim-pathogen]
 
@@ -89,12 +89,12 @@ fi
 echo ""
 
 #--------------------
-# installing pluggins
+# installing plugins
 #--------------------
 
 cd ~/.vim/bundle
 
-echo -e "\t * installing the pluggins... "
+echo -e "\t * installing the plugins... "
 
 echo -e "\t\t + nerdtree..."
 git clone https://github.com/scrooloose/nerdtree.git &> /dev/null
