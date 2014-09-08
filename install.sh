@@ -18,7 +18,7 @@ dpkg -s vim &> /dev/null
 
 if [ $? -ne 0 ]
 then
-	echo -e "\t\t + git not installed.. please install git "	
+	echo -e "\t\t + vim not installed.. please install git "	
 	exit 1
 else
 	echo -e "\t\t + vim installation check, success... "

@@ -12,5 +12,21 @@ installation
 
 important note
 --------------
+
 * install script, tested on a ubuntu 12.04 and 14.04
 * script should work on any debian based Linux OS
+* make sure you have vim, curl and git installed
+
+plugins installed ( brief description only, please visit respective websites for more details )
+------------------
+
+* NERDTree [https://github.com/scrooloose/nerdtree]: provides a sidebar file explorer on vim ( mapped in my vimrc to CTRL+L to toggle it ), the file explorer should list out the current directory files
+* EasyMotion [https://github.com/Lokaltog/vim-easymotion]: a fast and easy way to navigate on code/text your currently editing. activated by <leader><leader>w and then pressing the key to go to the position you need to navigate to
+* NERDCommenter [https://github.com/scrooloose/nerdcommenter]: a fast an efficient way to comment code
+* Syntatic [https://github.com/scrooloose/syntastic]: checks for any syntax errors in your code. supports many languages. activated when the file is saved ( <esc> :w <cr> )
+* CtrlP [https://github.com/kien/ctrlp.vim]: a fuzzy search for vim
+* indentLine [https://github.com/Yggdroot/indentLine]: plugin used for displaying thin vertical lines at each indentation level for code indented with spaces. very useful when coding python
+
+vimrc file
+------------------
+* the vimrc file contains all the relevant information (stated in comments) as to what each and every line is doing
