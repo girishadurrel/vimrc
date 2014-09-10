@@ -102,7 +102,7 @@ git clone https://github.com/scrooloose/nerdtree.git &> /dev/null
 if [ $? -ne 0 ]
 then
 	echo -e "\t\t\t - installation failed..."
-	exit 1
+	#exit 1
 else
 	echo -e "\t\t\t - installation success..."
 fi
@@ -113,7 +113,7 @@ git clone https://github.com/Lokaltog/vim-easymotion.git &> /dev/null
 if [ $? -ne 0 ]
 then
 	echo -e "\t\t\t - installation failed..."
-	exit 1
+	#exit 1
 else
 	echo -e "\t\t\t - installation success..."
 fi
@@ -124,7 +124,7 @@ git clone https://github.com/scrooloose/nerdcommenter.git &> /dev/null
 if [ $? -ne 0 ]
 then
 	echo -e "\t\t\t - installation failed..."
-	exit 1
+	#exit 1
 else
 	echo -e "\t\t\t - installation success..."
 fi
@@ -135,7 +135,7 @@ git clone https://github.com/scrooloose/syntastic.git &> /dev/null
 if [ $? -ne 0 ]
 then
 	echo -e "\t\t\t - installation failed..."
-	exit 1
+	#exit 1
 else
 	echo -e "\t\t\t - installation success..."
 fi
@@ -146,7 +146,7 @@ git clone https://github.com/kien/ctrlp.vim.git &> /dev/null
 if [ $? -ne 0 ]
 then
 	echo -e "\t\t\t - installation failed..."
-	exit 1
+	#exit 1
 else
 	echo -e "\t\t\t - installation success..."
 fi
@@ -157,7 +157,18 @@ git clone https://github.com/Yggdroot/indentLine.git &> /dev/null
 if [ $? -ne 0 ]
 then
 	echo -e "\t\t\t - installation failed..."
-	exit 1
+	#exit 1
+else
+	echo -e "\t\t\t - installation success..."
+fi
+
+echo -e "\t\t + autoClose..."
+git clone https://github.com/vim-scripts/AutoClose.git &> /dev/null
+
+if [ $? -ne 0 ]
+then
+	echo -e "\t\t\t - installation failed..."
+	#exit 1
 else
 	echo -e "\t\t\t - installation success..."
 fi

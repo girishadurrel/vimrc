@@ -15,9 +15,10 @@
 " NERDTree [https://github.com/scrooloose/nerdtree]
 " EasyMotion [https://github.com/Lokaltog/vim-easymotion]
 " NERDCommenter [https://github.com/scrooloose/nerdcommenter]
-" Syntatic [https://github.com/scrooloose/syntastic]
-" CtrlP [https://github.com/kien/ctrlp.vim]
+" syntatic [https://github.com/scrooloose/syntastic]
+" ctrlP [https://github.com/kien/ctrlp.vim]
 " indentLine [https://github.com/Yggdroot/indentLine]
+" AutoClose [https://github.com/vim-scripts/AutoClose]
 "
 execute pathogen#infect()
 
@@ -89,3 +90,11 @@ map <F5> :setlocal spell! spelllang=en_us<CR>
 " mapped CTRL + L for NERDTREE toggle in normal mode
 "
 nmap <silent> <C-L> :NERDTreeToggle<CR>
+
+"
+" using the autoclose plugin. sometimes its very annoying to 
+" add the semicolon ';' at the end of the line.
+" mapped \a in the insert mode to add the semi-colon at the 
+" end of the line 
+"
+inoremap <leader>; <C-o>A;
