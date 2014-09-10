@@ -26,7 +26,7 @@ plugins installed ( brief description only, please visit respective websites for
 * Syntatic [https://github.com/scrooloose/syntastic]: checks for any syntax errors in your code. supports many languages. activated when the file is saved ( <esc> :w <cr> )
 * CtrlP [https://github.com/kien/ctrlp.vim]: a fuzzy search for vim
 * indentLine [https://github.com/Yggdroot/indentLine]: plugin used for displaying thin vertical lines at each indentation level for code indented with spaces. very useful when coding python
-* AutoClose [https://github.com/vim-scripts/AutoClose]: autoclose open brackets etc. if you find it annoying you can disable it with <leader>a in the normal mode
+* AutoClose [https://github.com/vim-scripts/AutoClose]: autoclose open brackets etc. if you find it annoying you can disable it with &lt;leader&gt; a in the normal mode
 
 vimrc file
 ----------
