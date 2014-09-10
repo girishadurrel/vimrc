@@ -94,7 +94,7 @@ nmap <silent> <C-L> :NERDTreeToggle<CR>
 "
 " using the autoclose plugin. sometimes its very annoying to 
 " add the semicolon ';' at the end of the line.
-" mapped \a in the insert mode to add the semi-colon at the 
+" mapped \; in the insert mode to add the semi-colon at the 
 " end of the line 
 "
 inoremap <leader>; <C-o>A;
