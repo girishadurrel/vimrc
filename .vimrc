@@ -67,6 +67,11 @@ filetype plugin on
 " now nerdtree working directory will be the current working directory
 "
 
+" 
+" set a level of smart indenting for C like languages
+" 
+map <F2> :set smartindent! <CR>
+
 " cd ~/Projects
 set autochdir
 let NERDTreeChDirMode=2
