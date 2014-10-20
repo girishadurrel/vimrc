@@ -1,5 +1,22 @@
 #!/bin/bash
 
+#--------------------------------
+# Function to install plugins
+#--------------------------------
+
+function install {
+
+	echo -e "\t\t + "$2"..."
+	git clone $1 &> /dev/null
+
+	if [ $? -ne 0 ]
+	then
+		echo -e "\t\t\t - installation failed..."
+	else
+		echo -e "\t\t\t - installation success..."
+	fi
+}
+
 echo "" 
 
 echo "#-----------------------------------------------------------------------"
@@ -96,84 +113,13 @@ cd ~/.vim/bundle
 
 echo -e "\t * installing the plugins... "
 
-echo -e "\t\t + nerdtree..."
-git clone https://github.com/scrooloose/nerdtree.git &> /dev/null
-
-if [ $? -ne 0 ]
-then
-	echo -e "\t\t\t - installation failed..."
-	#exit 1
-else
-	echo -e "\t\t\t - installation success..."
-fi
-
-echo -e "\t\t + easymotion..."
-git clone https://github.com/Lokaltog/vim-easymotion.git &> /dev/null
-
-if [ $? -ne 0 ]
-then
-	echo -e "\t\t\t - installation failed..."
-	#exit 1
-else
-	echo -e "\t\t\t - installation success..."
-fi
-
-echo -e "\t\t + nerdcommentor..."
-git clone https://github.com/scrooloose/nerdcommenter.git &> /dev/null
-
-if [ $? -ne 0 ]
-then
-	echo -e "\t\t\t - installation failed..."
-	#exit 1
-else
-	echo -e "\t\t\t - installation success..."
-fi
-
-echo -e "\t\t + syntatic..."
-git clone https://github.com/scrooloose/syntastic.git &> /dev/null
-
-if [ $? -ne 0 ]
-then
-	echo -e "\t\t\t - installation failed..."
-	#exit 1
-else
-	echo -e "\t\t\t - installation success..."
-fi
-
-echo -e "\t\t + ctrlp..."
-git clone https://github.com/kien/ctrlp.vim.git &> /dev/null
-
-if [ $? -ne 0 ]
-then
-	echo -e "\t\t\t - installation failed..."
-	#exit 1
-else
-	echo -e "\t\t\t - installation success..."
-fi
-
-echo -e "\t\t + indentLine..."
-git clone https://github.com/Yggdroot/indentLine.git &> /dev/null
-
-if [ $? -ne 0 ]
-then
-	echo -e "\t\t\t - installation failed..."
-	#exit 1
-else
-	echo -e "\t\t\t - installation success..."
-fi
-
-echo -e "\t\t + autoClose..."
-git clone https://github.com/vim-scripts/AutoClose.git &> /dev/null
-
-if [ $? -ne 0 ]
-then
-	echo -e "\t\t\t - installation failed..."
-	#exit 1
-else
-	echo -e "\t\t\t - installation success..."
-fi
-
-echo "" 
+install https://github.com/scrooloose/nerdtree.git nerdtree
+install https://github.com/Lokaltog/vim-easymotion.git easymotion
+install https://github.com/scrooloose/nerdcommenter.git nerdcommentor
+install https://github.com/scrooloose/syntastic.git syntatic
+install https://github.com/kien/ctrlp.vim.git ctrlp
+install https://github.com/Yggdroot/indentLine.git indentLine
+install https://github.com/vim-scripts/AutoClose.git autoClose
 
 echo "#----------------------------------------------------------------------------"
 echo "# [installation] .vimrc and pluggings for girishadurrel's vimrc... [END]"
