@@ -70,7 +70,9 @@ filetype plugin on
 " 
 " set a level of smart indenting for C like languages
 " 
-map <F2> :set smartindent! <CR>
+" "map <F2> :set smartindent! <CR>
+set autoindent
+filetype plugin indent on
 
 " cd ~/Projects
 set autochdir
