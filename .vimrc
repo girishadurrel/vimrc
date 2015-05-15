@@ -105,3 +105,11 @@ nmap <silent> <C-L> :NERDTreeToggle<CR>
 " end of the line 
 "
 inoremap <leader>; <C-o>A;
+
+"
+" used with the syntatic plugin. creates a file .syntatic_java_config
+" where you can specify the class path for javac compilation 
+" the file can be populated by typing in the buffer when 
+" :SyntasticJavacEditClasspath (ex command) is executed.
+"
+let g:syntastic_java_javac_config_file_enabled = 1
