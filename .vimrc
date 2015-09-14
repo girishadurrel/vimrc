@@ -78,6 +78,8 @@ filetype plugin indent on
 set autochdir
 let NERDTreeChDirMode=2
 nnoremap <leader>n :NERDTree .<CR>
+" map <leader>t <plug>NERDTreeTabsToggle<CR>
+" let g:nerdtree_tabs_open_on_console_startup=1
 
 
 "-------------------------------------------------------
@@ -113,3 +115,47 @@ inoremap <leader>; <C-o>A;
 " :SyntasticJavacEditClasspath (ex command) is executed.
 "
 let g:syntastic_java_javac_config_file_enabled = 1
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_python_exec = '/usr/bin/python3'
+
+" 
+" configuration for coding 
+"
+
+"
+" insert spaces when tab is pressed
+"
+set expandtab 
+
+"
+" tabstop: number of spaces to show for a tab
+" softtabstop: number of spaces to insert when a 
+" tab is pressed
+"
+set tabstop=4
+set softtabstop=4
+
+"
+" number of spaces when indenting >> << 
+"
+set shiftwidth=4
+
+"
+" number of characters per line
+"
+set textwidth=80
+set formatoptions+=t
+
+"
+" set smarter tabs
+"
+set smarttab
