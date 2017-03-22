@@ -121,6 +121,21 @@ install https://github.com/kien/ctrlp.vim.git ctrlp
 install https://github.com/Yggdroot/indentLine.git indentLine
 install https://github.com/vim-scripts/AutoClose.git autoClose
 
+vmin=7.4
+pmin=143
+
+ver=$(vim --version | head -2 |  cut -d ' ' -f 5) 
+patch=$(vim --version | head -2 | tail -1 | cut -d '-' -f 2) 
+
+if [ 1 -eq "$(echo "${ver} >= ${vmin}" | bc)" ] 
+then
+    if [ $patch -ge $pmin ]
+    then
+        install https://github.com/Valloric/YouCompleteMe.git YouCompleteMe
+    fi
+fi 
+
+
 echo "#----------------------------------------------------------------------------"
 echo "# [installation] .vimrc and pluggings for girishadurrel's vimrc... [END]"
 echo "#----------------------------------------------------------------------------"
