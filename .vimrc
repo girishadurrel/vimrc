@@ -19,6 +19,7 @@
 " ctrlP [https://github.com/kien/ctrlp.vim]
 " indentLine [https://github.com/Yggdroot/indentLine]
 " AutoClose [https://github.com/vim-scripts/AutoClose]
+" Youcompleteme [https://github.com/Valloric/YouCompleteMe]
 "
 execute pathogen#infect()
 
@@ -29,8 +30,10 @@ execute pathogen#infect()
 set nocompatible
 
 "
-" show line number at the left hand corner
+" show line number at the left hand corner. also set up relative numbering so
+" its easier for jumping around the code
 "
+set relativenumber
 set number
 
 "
@@ -116,7 +119,6 @@ inoremap <leader>; <C-o>A;
 "
 let g:syntastic_java_javac_config_file_enabled = 1
 
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -126,6 +128,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = '/usr/bin/python3'
+
+map <F6> :SyntasticToggleMode<CR>
 
 " 
 " configuration for coding 
