@@ -20,6 +20,7 @@
 " indentLine [https://github.com/Yggdroot/indentLine]
 " AutoClose [https://github.com/vim-scripts/AutoClose]
 " Youcompleteme [https://github.com/Valloric/YouCompleteMe]
+" vim-go [https://github.com/fatih/vim-go]
 "
 execute pathogen#infect()
 
@@ -163,3 +164,19 @@ set formatoptions+=t
 " set smarter tabs
 "
 set smarttab
+
+"
+" imports go packages on :wq (part of vim-go)
+"
+let g:go_fmt_command = "goimports"
+
+"
+" highlight all occurrences of the search
+" defaulted to yellow color
+"
+set hlsearch
+
+"
+" press space to remove the highlights
+"
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>

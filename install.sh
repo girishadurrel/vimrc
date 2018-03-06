@@ -120,6 +120,7 @@ install https://github.com/scrooloose/syntastic.git syntatic
 install https://github.com/kien/ctrlp.vim.git ctrlp
 install https://github.com/Yggdroot/indentLine.git indentLine
 install https://github.com/vim-scripts/AutoClose.git autoClose
+install https://github.com/fatih/vim-go.git vim-go
 
 vmin=7.4
 pmin=143
