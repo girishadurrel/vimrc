@@ -122,20 +122,31 @@ install https://github.com/Yggdroot/indentLine.git indentLine
 install https://github.com/vim-scripts/AutoClose.git autoClose
 install https://github.com/fatih/vim-go.git vim-go
 
-vmin=7.4
-pmin=143
+#---------------------------------------------------
+# check vim version before installing YouCompleteMe 
+#---------------------------------------------------
+dpkg -s bc &> /dev/null # should be there by default?
 
-ver=$(vim --version | head -2 |  cut -d ' ' -f 5) 
-patch=$(vim --version | head -2 | tail -1 | cut -d '-' -f 2) 
-
-if [ 1 -eq "$(echo "${ver} >= ${vmin}" | bc)" ] 
+if [ $? -eq 0 ]
 then
-    if [ $patch -ge $pmin ]
-    then
-        install https://github.com/Valloric/YouCompleteMe.git YouCompleteMe
-    fi
-fi 
+    #
+    # as of 23-03-2017, YouCompleteMe supports vim ver. 7.4 patch 143 and above
+    # not sure if this is the best way to do it :P
+    #
+    vmin=7.4
+    pmin=143
 
+    ver=$(vim --version | head -2 |  cut -d ' ' -f 5) 
+    patch=$(vim --version | head -2 | tail -1 | cut -d '-' -f 2) 
+
+    if [ 1 -eq "$(echo "${ver} >= ${vmin}" | bc)" ] 
+    then
+        if [ $patch -ge $pmin ]
+        then
+            install https://github.com/Valloric/YouCompleteMe.git YouCompleteMe
+        fi
+    fi 
+fi
 
 echo "#----------------------------------------------------------------------------"
 echo "# [installation] .vimrc and pluggings for girishadurrel's vimrc... [END]"
