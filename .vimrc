@@ -180,3 +180,9 @@ set hlsearch
 " press space to remove the highlights
 "
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+"
+" get the vertical and horizontal cursor bars
+"
+set cursorline
+set cursorcolumn
