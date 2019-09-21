@@ -20,7 +20,8 @@
 " indentLine [https://github.com/Yggdroot/indentLine]
 " AutoClose [https://github.com/vim-scripts/AutoClose]
 " Youcompleteme [https://github.com/Valloric/YouCompleteMe]
-" vim-go [https://github.com/fatih/vim-go]
+" vim-go [https://github.com/fatih/vim-go] (not installed anymore; uncomment on
+" install script)
 "
 execute pathogen#infect()
 
@@ -138,6 +139,7 @@ map <F6> :SyntasticToggleMode<CR>
 
 "
 " insert spaces when tab is pressed
+" space rules yo!
 "
 set expandtab 
 
@@ -166,9 +168,9 @@ set formatoptions+=t
 set smarttab
 
 "
-" imports go packages on :wq (part of vim-go)
+" imports go packages on :wq (part of vim-go); uncomment if installed
 "
-let g:go_fmt_command = "goimports"
+"let g:go_fmt_command = "goimports"
 
 "
 " highlight all occurrences of the search
@@ -184,5 +186,5 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 "
 " get the vertical and horizontal cursor bars
 "
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn

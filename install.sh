@@ -29,44 +29,51 @@ echo ""
 # check installation dependencies
 #--------------------------------
 
-echo -e "\t * checking for vim installation..."
+if [[ "$OSTYPE" == "linux-gnu" || "$OSTYPE" == "dawin"* ]]; then 
 
-dpkg -s vim &> /dev/null
+    echo -e "\t * checking for vim installation..."
 
-if [ $? -ne 0 ]
-then
-	echo -e "\t\t + vim not installed.. please install vim "	
-	exit 1
-else
-	echo -e "\t\t + vim installation check, success... "
+    command -v vim &> /dev/null
+
+    if [ $? -ne 0 ]
+    then
+        echo -e "\t\t + vim not installed.. please install vim "	
+        exit 1
+    else
+        echo -e "\t\t + vim installation check, success... "
+    fi
+    echo ""
+
+    echo -e "\t * checking for git installation..."
+
+    command -v git &> /dev/null
+
+    if [ $? -ne 0 ]
+    then
+        echo -e "\t\t + git not installed.. please install git "	
+        exit 1
+    else
+        echo -e "\t\t + git installation check, success... "
+    fi
+    echo ""
+
+    echo -e "\t * checking for curl installation..."
+
+    command -v curl &> /dev/null
+
+    if [ $? -ne 0 ]
+    then
+        echo -e "\t\t + curl not installed.. please install curl "	
+        exit 1
+    else
+        echo -e "\t\t + curl installation check, success... "
+    fi
+    echo ""
+
+else 
+    echo -e "\t\t install script only supports deb based linux system "
+    exit 1
 fi
-echo ""
-
-echo -e "\t * checking for git installation..."
-
-dpkg -s git &> /dev/null
-
-if [ $? -ne 0 ]
-then
-	echo -e "\t\t + git not installed.. please install git "	
-	exit 1
-else
-	echo -e "\t\t + git installation check, success... "
-fi
-echo ""
-
-echo -e "\t * checking for curl installation..."
-
-dpkg -s curl &> /dev/null
-
-if [ $? -ne 0 ]
-then
-	echo -e "\t\t + curl not installed.. please install curl "	
-	exit 1
-else
-	echo -e "\t\t + curl installation check, success... "
-fi
-echo ""
 
 #-----------------------
 # if any .vimrc, backup
@@ -120,12 +127,15 @@ install https://github.com/scrooloose/syntastic.git syntatic
 install https://github.com/kien/ctrlp.vim.git ctrlp
 install https://github.com/Yggdroot/indentLine.git indentLine
 install https://github.com/vim-scripts/AutoClose.git autoClose
-install https://github.com/fatih/vim-go.git vim-go
+
+# uncomment this if go is your thing!
+#install https://github.com/fatih/vim-go.git vim-go
+# 
 
 #---------------------------------------------------
 # check vim version before installing YouCompleteMe 
 #---------------------------------------------------
-dpkg -s bc &> /dev/null # should be there by default?
+command -v bc &> /dev/null # should be there by default?
 
 if [ $? -eq 0 ]
 then
