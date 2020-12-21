@@ -22,6 +22,7 @@
 " Youcompleteme [https://github.com/Valloric/YouCompleteMe]
 " vim-go [https://github.com/fatih/vim-go] (not installed anymore; uncomment on
 " install script)
+" emmet-vim [https://github.com/mattn/emmet-vim] 
 "
 execute pathogen#infect()
 
@@ -37,6 +38,16 @@ set nocompatible
 "
 set relativenumber
 set number
+
+"
+" toggle line numbers and relative numbers display
+"
+nmap <silent> <C-E> :set number!<CR> <bar> :set relativenumber!<CR>
+
+"
+" toggle relative number
+"
+nmap <silent> <C-T> :set relativenumber!<CR>
 
 "
 " highlight text 
@@ -188,3 +199,10 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 "
 "set cursorline
 "set cursorcolumn
+"
+
+"
+" enable emmet only for html/css files
+"
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall

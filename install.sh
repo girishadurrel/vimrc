@@ -127,8 +127,9 @@ install https://github.com/scrooloose/syntastic.git syntatic
 install https://github.com/kien/ctrlp.vim.git ctrlp
 install https://github.com/Yggdroot/indentLine.git indentLine
 install https://github.com/vim-scripts/AutoClose.git autoClose
+install https://github.com/mattn/emmet-vim
 
-# uncomment this if go is your thing!
+# uncomment this if Go is your thing!
 #install https://github.com/fatih/vim-go.git vim-go
 # 
 

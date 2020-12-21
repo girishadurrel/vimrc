@@ -13,8 +13,7 @@ installation
 important note
 --------------
 
-* install script, tested on a ubuntu 12.04 and 14.04
-* script should work on any debian based Linux OS
+* install script, tested on Ubuntu and MacOS
 * make sure you have vim, curl and git installed
 
 plugins installed ( brief description only, please visit respective websites for more details )
@@ -29,6 +28,8 @@ plugins installed ( brief description only, please visit respective websites for
 * AutoClose [https://github.com/vim-scripts/AutoClose]: autoclose open brackets etc. if you find it annoying you can disable it with &lt;leader&gt; a in the normal mode
 * YouCompleteMe [https://github.com/Valloric/YouCompleteMe]: code completion for vim. Please note that you have to build YouCompleteMe in order to use it. Instructions on how to build it can be found in the official YouCompleteMe github page (wiki)
 * vim-go [https://github.com/fatih/vim-go]: must have for a gopher ;)
+* emmet-vim [https://github.com/mattn/emmet-vim] makes writing html/css on vim a
+  breeze
 
 vimrc file
 ----------
