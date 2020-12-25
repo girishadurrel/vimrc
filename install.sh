@@ -71,7 +71,7 @@ if [[ "$OSTYPE" == "linux-gnu" || "$OSTYPE" == "darwin"* ]]; then
     echo ""
 
 else 
-    echo -e "\t\t install script only supports deb based linux system "
+    echo -e "\t\t install script not supported on your OS"
     exit 1
 fi
 
@@ -148,7 +148,13 @@ then
     pmin=143
 
     ver=$(vim --version | head -2 |  cut -d ' ' -f 5) 
-    patch=$(vim --version | head -2 | tail -1 | cut -d '-' -f 2) 
+
+    if [ "$OSTYPE" == "darwin"* ] 
+    then
+        patch=$(vim --version | head -3 | tail -1 | cut -d '-' -f 2) 
+    else
+        patch=$(vim --version | head -2 | tail -1 | cut -d '-' -f 2) 
+    fi
 
     if [ 1 -eq "$(echo "${ver} >= ${vmin}" | bc)" ] 
     then
