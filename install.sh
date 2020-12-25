@@ -29,7 +29,7 @@ echo ""
 # check installation dependencies
 #--------------------------------
 
-if [[ "$OSTYPE" == "linux-gnu" || "$OSTYPE" == "dawin"* ]]; then 
+if [[ "$OSTYPE" == "linux-gnu" || "$OSTYPE" == "darwin"* ]]; then 
 
     echo -e "\t * checking for vim installation..."
 
@@ -127,7 +127,7 @@ install https://github.com/scrooloose/syntastic.git syntatic
 install https://github.com/kien/ctrlp.vim.git ctrlp
 install https://github.com/Yggdroot/indentLine.git indentLine
 install https://github.com/vim-scripts/AutoClose.git autoClose
-install https://github.com/mattn/emmet-vim
+install https://github.com/mattn/emmet-vim emmet
 
 # uncomment this if Go is your thing!
 #install https://github.com/fatih/vim-go.git vim-go
