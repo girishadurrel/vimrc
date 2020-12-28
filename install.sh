@@ -149,7 +149,7 @@ then
 
     ver=$(vim --version | head -2 |  cut -d ' ' -f 5) 
 
-    if [ "$OSTYPE" == "darwin"* ] 
+    if [[ "$OSTYPE" == "darwin"* ]]
     then
         patch=$(vim --version | head -3 | tail -1 | cut -d '-' -f 2) 
     else
