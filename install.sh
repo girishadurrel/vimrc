@@ -162,10 +162,12 @@ then
 
     if [[ "$OSTYPE" == "darwin"* ]];
     then
-        patch=$(vim --version | head -3 | tail -1 | cut -d"," -f 1 | cut -d '-' -f 2) 
+        patch_line=$(vim --version | head -3 | tail -1)
     else
-        patch=$(vim --version | head -2 | tail -1 | cut -d"," -f 1 | cut -d '-' -f 2) 
+        patch_line=$(vim --version | head -2 | tail -1)
     fi
+
+    patch=$(echo $patch_line | cut -d"," -f 1 | cut -d '-' -f 2)
 
     if [ 1 -eq "$(echo "${ver} >= ${vmin}" | bc)" ] 
     then
