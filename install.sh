@@ -6,15 +6,26 @@
 
 function install {
 
-	echo -e "\t\t + "$2"..."
-	git clone $1 &> /dev/null
+    #
+    # gymnatics to get the project name. lolz
+    #
+    p_name=$(echo $1 | rev | cut -d"/" -f 1 | rev | rev | cut -d"." -f 2- | rev)
+    echo -e "\t\t "$p_name"..."
 
-	if [ $? -ne 0 ]
-	then
-		echo -e "\t\t\t - installation failed..."
-	else
-		echo -e "\t\t\t - installation success..."
-	fi
+    # check for directory. if directory exists then assume the plugin
+    # is already installed
+    if [ -d "$p_name" ]; then
+        echo -e "\t\t\t - seems like "$p_name" is already installed"
+    else
+        git clone $1 &> /dev/null
+
+        if [ $? -ne 0 ]
+        then
+            echo -e "\t\t\t - installation failed..."
+        else
+            echo -e "\t\t\t - installation success..."
+        fi
+    fi
 }
 
 echo "" 
@@ -104,10 +115,10 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim &> /dev/null
 
 if [ $? -ne 0 ]
 then
-	echo -e "\t\t + pathegon installation failed..."
-	exit 1
+    echo -e "\t\t + pathegon installation failed..."
+    exit 1
 else
-	echo -e "\t\t + pathegon installation success..."
+    echo -e "\t\t + pathegon installation success..."
 fi
 
 echo ""
@@ -120,14 +131,14 @@ cd ~/.vim/bundle
 
 echo -e "\t * installing the plugins... "
 
-install https://github.com/scrooloose/nerdtree.git nerdtree
-install https://github.com/Lokaltog/vim-easymotion.git easymotion
-install https://github.com/scrooloose/nerdcommenter.git nerdcommentor
-install https://github.com/scrooloose/syntastic.git syntatic
-install https://github.com/kien/ctrlp.vim.git ctrlp
-install https://github.com/Yggdroot/indentLine.git indentLine
-install https://github.com/vim-scripts/AutoClose.git autoClose
-install https://github.com/mattn/emmet-vim emmet
+install https://github.com/scrooloose/nerdtree.git
+install https://github.com/Lokaltog/vim-easymotion.git
+install https://github.com/scrooloose/nerdcommenter.git
+install https://github.com/scrooloose/syntastic.git
+install https://github.com/kien/ctrlp.vim.git
+install https://github.com/Yggdroot/indentLine.git
+install https://github.com/vim-scripts/AutoClose.git
+install https://github.com/mattn/emmet-vim.git
 
 # uncomment this if Go is your thing!
 #install https://github.com/fatih/vim-go.git vim-go
@@ -149,7 +160,7 @@ then
 
     ver=$(vim --version | head -2 |  cut -d ' ' -f 5) 
 
-    if [[ "$OSTYPE" == "darwin"* ]]
+    if [[ "$OSTYPE" == "darwin"* ]];
     then
         patch=$(vim --version | head -3 | tail -1 | cut -d '-' -f 2) 
     else
