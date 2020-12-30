@@ -8,7 +8,7 @@ installation
 * clone repository ( $ git clone https://github.com/girishadurrel/vimrc.git )
 * go into repository directory ( $ cd vimrc )
 * $ chmod +x install.sh
-* $ ./install.sh
+* $ ./install.sh [-y enable_ycm ] [-g enable_vimgo ]
 
 important note
 --------------
@@ -26,10 +26,9 @@ plugins installed ( brief description only, please visit respective websites for
 * CtrlP [https://github.com/kien/ctrlp.vim]: a fuzzy search for vim
 * indentLine [https://github.com/Yggdroot/indentLine]: plugin used for displaying thin vertical lines at each indentation level for code indented with spaces. very useful when coding python
 * AutoClose [https://github.com/vim-scripts/AutoClose]: autoclose open brackets etc. if you find it annoying you can disable it with &lt;leader&gt; a in the normal mode
-* YouCompleteMe [https://github.com/Valloric/YouCompleteMe]: code completion for vim. Please note that you have to build YouCompleteMe in order to use it. Instructions on how to build it can be found in the official YouCompleteMe github page (wiki)
-* vim-go [https://github.com/fatih/vim-go]: must have for a gopher ;)
-* emmet-vim [https://github.com/mattn/emmet-vim] makes writing html/css on vim a
-  breeze
+* YouCompleteMe [https://github.com/Valloric/YouCompleteMe]: code completion for vim. Please note that you have to build YouCompleteMe in order to use it. Instructions on how to build it can be found in the official YouCompleteMe github page (wiki). This plugin will not be installed by default, set the command line parameter -y to true in the install script
+* vim-go [https://github.com/fatih/vim-go]: must have for a gopher ;) This plugin will not be installed by default, set the command line parameter -g to true in the install script
+* emmet-vim [https://github.com/mattn/emmet-vim] makes writing html/css on vim a breeze
 
 vimrc file
 ----------

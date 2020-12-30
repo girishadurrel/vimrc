@@ -14,12 +14,13 @@ function install {
 
     # check for directory. if directory exists then assume the plugin
     # is already installed
-    if [ -d "$p_name" ]; then
+    if [ -d "$p_name" ];
+    then
         echo -e "\t\t\t - seems like "$p_name" is already installed"
     else
         git clone $1 &> /dev/null
 
-        if [ $? -ne 0 ]
+        if [ $? -ne 0 ];
         then
             echo -e "\t\t\t - installation failed..."
         else
@@ -36,17 +37,27 @@ echo "#-----------------------------------------------------------------------"
 
 echo "" 
 
+while getopts "y:g:" flag;
+do
+    case $flag in
+        y) plug_ycm=$OPTARG
+            ;;
+        g) plug_go=$OPTARG
+            ;;
+    esac
+done
+
 #--------------------------------
 # check installation dependencies
 #--------------------------------
 
-if [[ "$OSTYPE" == "linux-gnu" || "$OSTYPE" == "darwin"* ]]; then 
-
+if [[ "$OSTYPE" == "linux-gnu" || "$OSTYPE" == "darwin"* ]];
+then
     echo -e "\t * checking for vim installation..."
 
     command -v vim &> /dev/null
 
-    if [ $? -ne 0 ]
+    if [ $? -ne 0 ];
     then
         echo -e "\t\t + vim not installed.. please install vim "	
         exit 1
@@ -59,7 +70,7 @@ if [[ "$OSTYPE" == "linux-gnu" || "$OSTYPE" == "darwin"* ]]; then
 
     command -v git &> /dev/null
 
-    if [ $? -ne 0 ]
+    if [ $? -ne 0 ];
     then
         echo -e "\t\t + git not installed.. please install git "	
         exit 1
@@ -72,7 +83,7 @@ if [[ "$OSTYPE" == "linux-gnu" || "$OSTYPE" == "darwin"* ]]; then
 
     command -v curl &> /dev/null
 
-    if [ $? -ne 0 ]
+    if [ $? -ne 0 ];
     then
         echo -e "\t\t + curl not installed.. please install curl "	
         exit 1
@@ -140,16 +151,17 @@ install https://github.com/Yggdroot/indentLine.git
 install https://github.com/vim-scripts/AutoClose.git
 install https://github.com/mattn/emmet-vim.git
 
-# uncomment this if Go is your thing!
-#install https://github.com/fatih/vim-go.git vim-go
-# 
+if [[ -n $plug_go ]];
+then
+    install https://github.com/fatih/vim-go.git vim-go
+fi
 
 #---------------------------------------------------
 # check vim version before installing YouCompleteMe 
 #---------------------------------------------------
 command -v bc &> /dev/null # should be there by default?
 
-if [ $? -eq 0 ]
+if [[ $? -eq 0 && -n $plug_ycm ]];
 then
     #
     # as of 23-03-2017, YouCompleteMe supports vim ver. 7.4 patch 143 and above
@@ -169,7 +181,7 @@ then
 
     patch=$(echo $patch_line | cut -d"," -f 1 | cut -d '-' -f 2)
 
-    if [ 1 -eq "$(echo "${ver} >= ${vmin}" | bc)" ] 
+    if [ 1 -eq "$(echo "${ver} >= ${vmin}" | bc)" ];
     then
         if [ $patch -ge $pmin ]
         then
