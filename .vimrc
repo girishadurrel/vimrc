@@ -19,10 +19,14 @@
 " ctrlP [https://github.com/kien/ctrlp.vim]
 " indentLine [https://github.com/Yggdroot/indentLine]
 " AutoClose [https://github.com/vim-scripts/AutoClose]
-" Youcompleteme [https://github.com/Valloric/YouCompleteMe]
-" vim-go [https://github.com/fatih/vim-go] (not installed anymore; uncomment on
-" install script)
 " emmet-vim [https://github.com/mattn/emmet-vim] 
+" 
+" the following two plugins are not installed by default anymore.
+" see the readme for appropriate flags to install them using the 
+" install script
+" Youcompleteme [https://github.com/Valloric/YouCompleteMe]
+" vim-go [https://github.com/fatih/vim-go]
+"
 "
 execute pathogen#infect()
 
