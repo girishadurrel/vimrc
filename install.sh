@@ -37,12 +37,12 @@ echo "#-----------------------------------------------------------------------"
 
 echo "" 
 
-while getopts "y:g:" flag;
+while getopts "y g " flag;
 do
     case $flag in
-        y) plug_ycm=$OPTARG
+        y) plug_ycm="SET"
             ;;
-        g) plug_go=$OPTARG
+        g) plug_go="SET"
             ;;
     esac
 done
